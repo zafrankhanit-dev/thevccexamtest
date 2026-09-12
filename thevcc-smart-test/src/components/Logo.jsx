@@ -9,7 +9,7 @@ export default function Logo({ size = 'md', className = '' }) {
 
   return (
     <img
-      src="/final logo 02.png"
+      src="/logo.png"
       alt="The Vision Coaching Centre"
       className={`${dims} object-contain ${className}`}
     />
