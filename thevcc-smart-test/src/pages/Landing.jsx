@@ -9,7 +9,7 @@ export default function Landing() {
       <div className="flex-1 flex items-center justify-center px-4 py-14">
         <div className="w-full max-w-3xl text-center">
           <div className="flex justify-center mb-5">
-            <Logo size="lg" />
+            <Logo size="xl" />
           </div>
           <p className="text-xs font-semibold tracking-widest text-gold-600 uppercase mb-2">
             VCC Digital Examination Portal
