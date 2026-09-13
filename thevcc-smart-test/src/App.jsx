@@ -12,6 +12,10 @@ import AvailableTests from './pages/student/AvailableTests';
 import Instructions from './pages/student/Instructions';
 import Exam from './pages/student/Exam';
 import Result from './pages/student/Result';
+import TestHistory from './pages/student/TestHistory';
+import Performance from './pages/student/Performance';
+import ReviewTest from './pages/student/ReviewTest';
+import Profile from './pages/student/Profile';
 
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminLayout from './pages/admin/AdminLayout';
@@ -50,6 +54,10 @@ export default function App() {
       >
         <Route index element={<StudentDashboard />} />
         <Route path="tests" element={<AvailableTests />} />
+        <Route path="history" element={<TestHistory />} />
+        <Route path="performance" element={<Performance />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="review/:attemptId" element={<ReviewTest />} />
       </Route>
       <Route
         path="/student/instructions/:testId"
