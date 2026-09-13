@@ -63,13 +63,30 @@ export default function StudentDetail() {
 
       <div className="card p-6 mt-3">
         <div className="flex items-center justify-between flex-wrap gap-3">
-          <div>
-            <h1 className="text-lg font-bold text-ink-950">{student.profiles?.full_name}</h1>
-            <p className="text-sm text-ink-500">
-              {student.student_id} · {student.class || '—'} {student.section}
-            </p>
+          <div className="flex items-center gap-4">
+            {student.photo_url ? (
+              <img src={student.photo_url} alt="" className="h-16 w-16 rounded-full object-cover" />
+            ) : (
+              <div className="h-16 w-16 rounded-full bg-ink-100 text-ink-400 flex items-center justify-center text-xl font-semibold">
+                {student.profiles?.full_name?.charAt(0) || '?'}
+              </div>
+            )}
+            <div>
+              <h1 className="text-lg font-bold text-ink-950">{student.profiles?.full_name}</h1>
+              <p className="text-sm text-ink-500">
+                {student.student_id} · {student.class || '—'} {student.section}
+              </p>
+            </div>
           </div>
           <span className={student.status ? 'badge-green' : 'badge-red'}>{student.status ? 'ON' : 'OFF'}</span>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 mt-5 pt-5 border-t border-ink-100 text-sm">
+          <p><span className="text-ink-400">Father Name:</span> {student.father_name || '—'}</p>
+          <p><span className="text-ink-400">Blood Type:</span> {student.blood_type || '—'}</p>
+          <p><span className="text-ink-400">School:</span> {student.school_name || '—'}</p>
+          <p><span className="text-ink-400">Phone:</span> {student.phone || '—'}</p>
+          <p><span className="text-ink-400">Email:</span> {student.email || '—'}</p>
         </div>
       </div>
 
