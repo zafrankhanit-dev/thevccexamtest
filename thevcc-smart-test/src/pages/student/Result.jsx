@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Eye } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
 import { PageLoading, ErrorState } from '../../components/States';
 
@@ -64,13 +65,18 @@ export default function Result() {
               <Stat label="Obtained Marks" value={result.obtained_marks} />
             </div>
 
-            <Link to="/student" className="btn-primary w-full mt-6">
-              Back to Dashboard
-            </Link>
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              <Link to={`/student/review/${attemptId}`} className="btn-secondary gap-1.5">
+                <Eye size={16} /> Review Test
+              </Link>
+              <Link to="/student" className="btn-primary">
+                Back to Dashboard
+              </Link>
+            </div>
           </div>
         </div>
         <p className="text-center text-xs text-ink-400 mt-5">
-          This result is only available right after submission. Contact the administrator for older results.
+          You can review this test anytime from Test History.
         </p>
       </div>
     </div>
